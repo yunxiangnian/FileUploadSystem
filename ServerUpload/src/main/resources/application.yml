@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: server
+
+  # 数据源的名称
+  datasource:
+    # 数据源的基本配置
+    username: root
+    password: 200004
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/ssm?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# mybatis的配置
+mybatis:
+  # 映射文件的位置
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    # 开启驼峰命名
+    map-underscore-to-camel-case: true
+
+
+# 设置服务器端口
+server:
+  port: 8000
+
+#日志级别
+logging:
+  level:
+    com.cloud.lsw.server.service.impl.ServerServiceImpl: debug
